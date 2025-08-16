@@ -1,5 +1,6 @@
 package com.learning.spring.boot.jdbc.tennis_player.services;
 
+import com.learning.spring.boot.jdbc.tennis_player.exceptions.PlayerNotFoundException;
 import com.learning.spring.boot.jdbc.tennis_player.jpa.Player;
 import com.learning.spring.boot.jdbc.tennis_player.spring.data.jpa.PlayerJpaRepository;
 import jakarta.transaction.Transactional;
@@ -43,7 +44,7 @@ public class PlayerService {
         }
         else
         {
-            throw new RuntimeException("Player id "+ player.getId() +" is not found");
+            throw new PlayerNotFoundException("Player id "+ player.getId() +" is not found");
         }
 
 
@@ -59,7 +60,7 @@ public class PlayerService {
         }
         else
         {
-            throw new RuntimeException("Player id "+ id +" is not found");
+            throw new PlayerNotFoundException("Player id "+ id +" is not found");
         }
     }
     public List<Player> getAllPlayers()
@@ -86,7 +87,7 @@ public class PlayerService {
         }
         else
         {
-            throw new RuntimeException("Player id "+ id +" is not found");
+            throw new PlayerNotFoundException("Player id "+ id +" is not found");
         }
 
     }
@@ -106,7 +107,7 @@ public class PlayerService {
         }
         else
         {
-            throw new RuntimeException("Player id "+ id +" is not found");
+            throw new PlayerNotFoundException("Player id "+ id +" is not found");
         }
 
     }
